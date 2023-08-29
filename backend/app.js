@@ -7,6 +7,7 @@ dotenv.config();
 const app = express();
 
 // middlewears
+app.use(express.json())
   app.use("/user", userRouter);
 
 mongoose

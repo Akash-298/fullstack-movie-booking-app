@@ -1,11 +1,11 @@
 import express from "express";
-import { getAllUsers } from "../controller/user-controller";
+import { getAllUsers, singup } from "../controller/user-controller";
 
 const userRouter = express.Router();
 
 userRouter.get("/", getAllUsers);
 // userRouter.get("/:id", getUserById);
-// userRouter.post("/signup", singup);
+userRouter.post("/signup", singup);
 // userRouter.put("/:id", updateUser);
 // userRouter.delete("/:id", deleteUser);
 // userRouter.post("/login", login);
