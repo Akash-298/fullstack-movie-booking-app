@@ -2,6 +2,8 @@ import  express  from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRouter from "./routes/user-router";
+import adminRouter from "./routes/admin-router.js";
+
 
 dotenv.config();
 const app = express();
@@ -9,6 +11,7 @@ const app = express();
 // middlewears
 app.use(express.json())
   app.use("/user", userRouter);
+  app.use("/admin", adminRouter);
 
 mongoose
   .connect(
