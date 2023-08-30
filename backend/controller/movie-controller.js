@@ -2,11 +2,14 @@ import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
 import Admin from "../models/Admin";
 import Movie from "../models/Movie";
+
+
 export const addMovie = async (req, res, next) => {
-  const extractedToken = req.headers.authorization.split(" ")[1];
-  if (!extractedToken && extractedToken.trim() === "") {
-    return res.status(404).json({ message: "Token Not Found" });
-  }
+    const extractedToken = req.headers.authorization.split(" ")[1];
+    if (!extractedToken && extractedToken.trim() === "") {
+      return res.status(404).json({ message: "Token Not Found" });
+    }
+  
 
   let adminId;
 
@@ -61,7 +64,7 @@ export const addMovie = async (req, res, next) => {
   }
 
   return res.status(201).json({ movie });
-};
+ };
 
 export const getAllMovies = async (req, res, next) => {
   let movies;
