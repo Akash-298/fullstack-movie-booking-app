@@ -115,21 +115,21 @@ export const login = async (req, res, next) => {
     .json({ message: "Login Successfull", id: existingUser._id });
 };
 
-// export const getBookingsOfUser = async (req, res, next) => {
-//   const id = req.params.id;
-//   let bookings;
-//   try {
-//     bookings = await Bookings.find({ user: id })
-//       .populate("movie")
-//       .populate("user");
-//   } catch (err) {
-//     return console.log(err);
-//   }
-//   if (!bookings) {
-//     return res.status(500).json({ message: "Unable to get Bookings" });
-//   }
-//   return res.status(200).json({ bookings });
-// };
+export const getBookingsOfUser = async (req, res, next) => {
+  const id = req.params.id;
+  let bookings;
+  try {
+    bookings = await Bookings.find({ user: id })
+      .populate("movie")
+      .populate("user");
+  } catch (err) {
+    return console.log(err);
+  }
+  if (!bookings) {
+    return res.status(500).json({ message: "Unable to get Bookings" });
+  }
+  return res.status(200).json({ bookings });
+};
 export const getUserById = async (req, res, next) => {
   const id = req.params.id;
   let user;

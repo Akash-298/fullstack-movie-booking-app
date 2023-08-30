@@ -1,9 +1,5 @@
 import express from "express";
-import {
-  deleteBooking,
-  getBookingById,
-  newBooking,
-} from "../controllers/booking-controller";
+import { deleteBooking, getBookingById, newBooking } from "../controller/booking-controller";
 
 const bookingsRouter = express.Router();
 

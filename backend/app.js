@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import userRouter from "./routes/user-router";
 import adminRouter from "./routes/admin-router.js";
 import movieRouter from "./routes/movie-router";
+import bookingsRouter from "./routes/booking-router";
 
 
 dotenv.config();
@@ -14,6 +15,7 @@ app.use(express.json())
   app.use("/user", userRouter);
   app.use("/admin", adminRouter);
   app.use("/movie", movieRouter);
+   app.use("/booking",bookingsRouter);
 
 mongoose
   .connect(
