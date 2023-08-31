@@ -1,5 +1,10 @@
 import { useEffect } from "react";
 import Header from "./components/Header";
+import HomePage from "./components/HomePage";
+import Movies from "./components/Movies/Movies";
+import Admin from "./components/Admin/Admin";
+import { Route, Routes } from "react-router-dom";
+import Auth from "./components/Auth/Auth";
 
 
 function App() {
@@ -18,33 +23,15 @@ function App() {
   return (
     <div>
       <Header />
-      {/* <section>
+       <section> 
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/movies" element={<Movies />} />
-          {!isUserLoggedIn && !isAdminLoggedIn && (
-            <>
-              {" "}
-              <Route path="/admin" element={<Admin />} />
-              <Route path="/auth" element={<Auth />} />
-            </>
-          )}
-          {isUserLoggedIn && !isAdminLoggedIn && (
-            <>
-              {" "}
-              <Route path="/user" element={<UserProfile />} />
-              <Route path="/booking/:id" element={<Booking />} />
-            </>
-          )}
-          {isAdminLoggedIn && !isUserLoggedIn && (
-            <>
-              {" "}
-              <Route path="/add" element={<AddMovie />} />
-              <Route path="/user-admin" element={<AdminProfile />} />{" "}
-            </>
-          )}
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/auth" element={<Auth />} />
+         
         </Routes>
-      </section> */}
+      </section> *
     </div>
   );
 }
