@@ -11,9 +11,13 @@ import {
 import MovieCreationIcon from "@mui/icons-material/MovieCreation";
 import { getAllMovies } from "../api-helpers/api-helpers";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 // const dummyArray = ["eMemory", "Brahmastra", "OK", "PK"];
 
 const Header = () => {
+    const isAdminLoggedIn = useSelector((state) => state.admin.isLoggedIn);
+  const isUserLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  
     const [movies,setMovies] = useState([])
     const [value, setValue] = useState();
     useEffect(()=>{
