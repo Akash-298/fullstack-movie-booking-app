@@ -10,9 +10,8 @@
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
-- [License](#license)
 - [Contact Information](#contact-information)
-- [Acknowledgments](#acknowledgments)
+
 
 ## Project Description
 
