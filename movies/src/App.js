@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Header from "./components/Header";
 import HomePage from "./components/HomePage";
 import Movies from "./components/Movies/Movies";
-import Admin from "./components/Admin/Admin";
+import Admin from "./components/Auth/Admin";
 import { Route, Routes } from "react-router-dom";
 import Auth from "./components/Auth/Auth";
 import { useDispatch, useSelector } from "react-redux";
@@ -33,13 +33,29 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/movies" element={<Movies />} />
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/auth" element={<Auth />} />
-          <Route path="/booking/:id" element={<Booking />} />
+          {!isUserLoggedIn  && !isAdminLoggedIn &&(<>
+             <Route path="/admin" element={<Admin />} />
+             <Route path="/auth" element={<Auth />} />
+             </>
+          )}
+
+{
+  isUserLoggedIn  && !isAdminLoggedIn &&(<>
+  <Route path="/booking/:id" element={<Booking />} />
           <Route path="/user" element={<UserProfile />} />
-          <Route path="/add" element={<AddMovie />} />
+           </>
+          )}
+
+{
+  !isUserLoggedIn  && isAdminLoggedIn &&(<>
+  <Route path="/add" element={<AddMovie />} />
           <Route path="/user-admin" element={<AdminProfile />} />
+              </>
+          )}
+
          
+         
+          
         </Routes>
       </section> 
     </div>

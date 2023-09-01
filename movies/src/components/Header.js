@@ -20,7 +20,7 @@ const Header = () => {
     const dispatch = useDispatch();
     const isAdminLoggedIn = useSelector((state) => state.admin.isLoggedIn);
   const isUserLoggedIn = useSelector((state) => state.user.isLoggedIn);
-  
+  const [selectedMocvie,setSelectedMovie] = useState();
     const [movies,setMovies] = useState([])
     const [value, setValue] = useState();
     useEffect(()=>{
@@ -43,12 +43,13 @@ const Header = () => {
     <AppBar position="sticky" sx={{ bgcolor: "#2b2d42" }}>
       <Toolbar>
         <Box width="20%">
-          {/* <Link to="/" style={{ color: "white" }}> */}
+          <Link to="/" style={{ color: "white" }}>
           <MovieCreationIcon />
-          {/* </Link> */}
+          </Link>
         </Box>
         <Box width="50%" marginRight={"auto"} marginLeft="auto">
           <Autocomplete
+          onChange={handleChange}
             freeSolo
             options={movies && movies.map((option) => option.title)}
             renderInput={(params) => (
