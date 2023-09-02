@@ -20,8 +20,6 @@
 
 Learn how to implement features such as user authentication, admin functionality, booking management, and multi-user roles. Additionally, this project adheres to best practices for performance optimization.
 
-![Relationship Diagram](insert_relationship_diagram_image_url_here)
-
 ## Features
 
 - User authentication with JWT
@@ -30,8 +28,6 @@ Learn how to implement features such as user authentication, admin functionality
 - Advanced user roles and permissions
 - Performance-optimized design
 - And much more!
-
-![Flow Control](insert_flow_control_image_url_here)
 
 ## Demo
 
