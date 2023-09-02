@@ -1,6 +1,7 @@
 # Full Stack Movie Booking App
 
-![Project Image](insert_image_url_here)
+![front part of app](https://github.com/Akash-298/fullstack-movie-booking-app/assets/105929312/9787ee17-78b8-40e7-9b60-7126d9e1e895)
+
 
 ## Table of Contents
 - [Project Description](#project-description)
