@@ -1,9 +1,22 @@
 
   import { Button, Card, CardActions, CardContent, Typography } from "@mui/material";
 import React from "react";
-  import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+  import { Link, useNavigate } from "react-router-dom";
   
   const MovieItem = ({ title, releaseDate, posterUrl, id }) => {
+
+    const navigate = useNavigate();
+    const isUserLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  
+    const handleButtonClick = () => {
+      if (isUserLoggedIn) {
+        console.log("inside the handlechange")
+        navigate(`/booking/${id}`);
+      } else {
+        navigate('/auth');
+      }
+    };
     return (
       <Card
         sx={{
@@ -29,15 +42,16 @@ import React from "react";
           <Button
             variant="contained"
             fullWidth
-            LinkComponent={Link}
-            to={`/booking/${id}`}
+            
             sx={{
               margin: "auto",
-              bgcolor: "#2b2d42",
+              bgcolor: "#F53163",
               ":hover": {
                 bgcolor: "#121217",
               },
+              
             }}
+            onClick={handleButtonClick}
             size="small"
           >
             Book
