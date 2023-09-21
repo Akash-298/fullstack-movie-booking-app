@@ -5,12 +5,14 @@ import userRouter from "./routes/user-router";
 import adminRouter from "./routes/admin-router.js";
 import movieRouter from "./routes/movie-router";
 import bookingsRouter from "./routes/booking-router";
+import cors from "cors";
 
 
 dotenv.config();
 const app = express();
 
 // middlewears
+app.use(cors());
 app.use(express.json())
   app.use("/user", userRouter);
   app.use("/admin", adminRouter);
